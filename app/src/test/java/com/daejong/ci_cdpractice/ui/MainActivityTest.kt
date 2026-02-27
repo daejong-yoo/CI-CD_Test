@@ -22,7 +22,7 @@ import org.robolectric.shadows.ShadowToast
 class MainActivityTest {
 
     @Test
-    fun `A버튼을_누르면_토스트가_떠야한다`() {
+    fun testToastMessage() {
         ActivityScenario.launch(MainActivity::class.java).use { scenario ->
             scenario.onActivity { activity ->
                 // 1. A 버튼 클릭
@@ -36,7 +36,7 @@ class MainActivityTest {
     }
 
     @Test
-    fun `B버튼을_누르면_SubActivity로_이동해야한다`() {
+    fun testNavigateToSubActivity() {
         ActivityScenario.launch(MainActivity::class.java).use { scenario ->
             scenario.onActivity { activity ->
                 // 1. B 버튼 클릭
