@@ -14,10 +14,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: set up JDK 21
+      - name: set up JDK 17
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
+          java-version: '17'
           distribution: 'temurin'
           cache: gradle
 
@@ -31,9 +31,7 @@ jobs:
       # 2. Robolectric을 포함한 단위 테스트 실행
       # Robolectric의 원활한 실행을 위해 메모리 할당량을 명시합니다.
       - name: Run Unit Tests
-        # --tests 옵션을 주면 특정 테스트를 강제로 실행하려 시도하고, 실패 시 이유를 상세히 알려줍니다.
-#        run: ./gradlew testDebugUnitTest --info
-        run: ./gradlew testDebugUnitTest --info --tests "com.daejong.ci_cdpractice.ui.*"
+        run: ./gradlew :app:testDebugUnitTest --info
 
 
       # 3. 테스트 실패 시 리포트 업로드 (어디가 틀렸는지 확인용)
