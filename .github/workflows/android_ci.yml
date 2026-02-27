@@ -28,15 +28,24 @@ jobs:
       - name: Run ktlint
         run: ./gradlew ktlintCheck
 
-      # 2. MockK 등을 사용한 단위 테스트 실행
+      # 2. Robolectric을 포함한 단위 테스트 실행
+      # Robolectric의 원활한 실행을 위해 메모리 할당량을 명시합니다.
       - name: Run Unit Tests
-        run: ./gradlew testDebugUnitTest
+        run: ./gradlew testDebugUnitTest -Dorg.gradle.jvmargs="-Xmx2g -XX:MaxMetaspaceSize=512m"
 
-      # 3. CD: 설치 가능한 APK 빌드
+      # 3. 테스트 실패 시 리포트 업로드 (어디가 틀렸는지 확인용)
+      - name: Upload Test Report
+        if: failure() # 테스트가 실패했을 때만 실행
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: app/build/reports/tests/testDebugUnitTest/
+
+      # 4. CD: 설치 가능한 APK 빌드
       - name: Build debug APK
         run: ./gradlew assembleDebug
 
-      # 4. CD: 빌드된 APK를 GitHub Artifact로 업로드
+      # 5. CD: 빌드된 APK를 GitHub Artifact로 업로드
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
