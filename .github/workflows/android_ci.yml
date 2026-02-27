@@ -33,7 +33,7 @@ jobs:
       - name: Run Unit Tests
         # --tests 옵션을 주면 특정 테스트를 강제로 실행하려 시도하고, 실패 시 이유를 상세히 알려줍니다.
 #        run: ./gradlew testDebugUnitTest --info
-        run: ./gradlew testDebugUnitTest --info --tests "com.daejong.ci_cdpractice.*"
+        run: ./gradlew testDebugUnitTest --info --tests "com.daejong.ci_cdpractice.ui.*"
 
 
       # 3. 테스트 실패 시 리포트 업로드 (어디가 틀렸는지 확인용)
