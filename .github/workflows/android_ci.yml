@@ -31,7 +31,7 @@ jobs:
       # 2. Robolectric을 포함한 단위 테스트 실행
       # Robolectric의 원활한 실행을 위해 메모리 할당량을 명시합니다.
       - name: Run Unit Tests
-        run: ./gradlew :app:testDebugUnitTest --info
+        run: ./gradlew testDebugUnitTest --info
 
 
       # 3. 테스트 실패 시 리포트 업로드 (어디가 틀렸는지 확인용)
