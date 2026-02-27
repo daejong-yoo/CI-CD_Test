@@ -32,7 +32,7 @@ jobs:
       # Robolectric의 원활한 실행을 위해 메모리 할당량을 명시합니다.
       - name: Run Unit Tests
         # --tests 옵션을 주면 특정 테스트를 강제로 실행하려 시도하고, 실패 시 이유를 상세히 알려줍니다.
-        run: ./gradlew testDebugUnitTest --info --tests "com.daejong.ci_cdpractice.ui.MainActivityTest"
+        run: ./gradlew testDebugUnitTest --info --tests "com.daejong.ci_cdpractice.*"
 
       # 3. 테스트 실패 시 리포트 업로드 (어디가 틀렸는지 확인용)
       - name: Upload Test Report
