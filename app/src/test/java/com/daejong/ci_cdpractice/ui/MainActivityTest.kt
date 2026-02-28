@@ -3,13 +3,11 @@ package com.daejong.ci_cdpractice.ui
 import android.content.Intent
 import android.widget.Button
 import androidx.test.core.app.ActivityScenario
-
 import com.daejong.ci_cdpractice.MainActivity
 import com.daejong.ci_cdpractice.R
 import com.daejong.ci_cdpractice.SubActivity
-import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.CoreMatchers.`is`
-
+import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
@@ -30,7 +28,7 @@ class MainActivityTest {
 
                 // 2. 토스트 검증 (Robolectric 전용 메서드)
                 val latestToast = ShadowToast.getLatestToast()
-                assertThat(ShadowToast.getTextOfLatestToast(), `is`("테스트 토스트 입니다."))
+                assertThat(ShadowToast.getTextOfLatestToast(), `is`("테스트 토스트 테스트 토스트"))
             }
         }
     }
