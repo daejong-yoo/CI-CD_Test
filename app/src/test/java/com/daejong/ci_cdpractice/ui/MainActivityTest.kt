@@ -3,13 +3,11 @@ package com.daejong.ci_cdpractice.ui
 import android.content.Intent
 import android.widget.Button
 import androidx.test.core.app.ActivityScenario
-
 import com.daejong.ci_cdpractice.MainActivity
 import com.daejong.ci_cdpractice.R
 import com.daejong.ci_cdpractice.SubActivity
-import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.CoreMatchers.`is`
-
+import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner

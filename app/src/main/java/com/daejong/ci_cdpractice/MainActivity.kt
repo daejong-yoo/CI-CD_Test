@@ -6,8 +6,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.daejong.ci_cdpractice.databinding.ActivityMainBinding
-import kotlinx.coroutines.newSingleThreadContext
-import kotlin.getValue
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding;
