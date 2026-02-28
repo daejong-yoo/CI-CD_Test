@@ -30,7 +30,7 @@ class MainActivityTest {
 
                 // 2. 토스트 검증 (Robolectric 전용 메서드)
                 val latestToast = ShadowToast.getLatestToast()
-                assertThat(ShadowToast.getTextOfLatestToast(), `is`("테스트 토스트 입니다."))
+                assertThat(ShadowToast.getTextOfLatestToast(), `is`("테스트 토스트"))
             }
         }
     }
